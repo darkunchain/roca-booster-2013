@@ -7,7 +7,6 @@
 \usetikzlibrary{calc}
 % \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[scaled]{luximono} % for bold typewriter fonts
 \usepackage{textcomp}
 % \usepackage{listings}
 \usepackage{minted}
@@ -18,6 +17,7 @@
 % \usepackage{ulem}       % for \sout
 \usepackage{hyperref}
 \usepackage[ngerman]{babel}
+\usepackage{pifont}
 
 \date{Booster Conference, Bergen/NO \\ 2013-03-14}
 \author{FND \& wvk, innoQ Deutschland GmbH}
@@ -118,7 +118,7 @@
 
   \begin{itemize}
     \item crawler, indexer (SEO fo free, yay!)
-    \item command-line user agent (curl or wget)
+    \item alternative user agent (curl, text browser, screen reader etc.)
     \item arbitrary unanticipated usage
   \end{itemize}
 %   wvk
@@ -186,6 +186,7 @@
 \end{frame}
 
 
+\begin{frame}
 
 % All authenticated communication relies on HTTP Basic Authentication over SSL (or Client Certificates). Alternatively, because of browser limits in handling basic auth (e.g. no logout, no styling), form-based authentication in conjunction with cookies can be used. If cookies are used, they should include all of the state needed for the server to process them, and another authentication mechanism should be supported for non-browser access. [auth]
 % Cookies may not be used for purposes other than authentication or user tracking. [cookies]
@@ -216,6 +217,38 @@
 
 \end{frame}
 
+\begin{frame}
+  Cookies are being used to store form inputs from a previous step.
+  \begin{itemize}
+    \item[$\square$] \ding{51}
+    \item[$\square$] \ding{55}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  When sharing a URL with another user, that user is presented with an empty page.
+  [-> session state]
+\end{frame}
+
+\begin{frame}
+  redirect session data, multi-tab conflicts
+\end{frame}
+
+\begin{frame}
+  When refreshing the page, the user is taken to the initial entry point.
+\end{frame}
+
+\begin{frame}
+  After using the browser's back button, the user is presented with an error messsage informing them to use the website's own navigation instead.
+\end{frame}
+
+\begin{frame}
+  After bookmarking the current page and returning to it later, the user is taken to the website's frontpage.
+\end{frame}
+
+\begin{frame}
+  ...
+\end{frame}
 
 \begin{frame}{Kontakt}
   \begin{columns}
