@@ -1,0 +1,92 @@
+\documentclass{beamer}
+\usepackage{beamerthemesplit}
+\usetheme{innoQ}
+\setbeamertemplate{navigation symbols}{}
+% \beamersetuncovermixins{\opaqueness<1>{15}}{\opaqueness<2->{10}}
+\def\pdfshellescape{1}
+\usetikzlibrary{calc}
+% \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+% \usepackage[scaled]{luximono} % for bold typewriter fonts
+\usepackage{textcomp}
+% \usepackage{listings}
+\usepackage{minted}
+\usepackage{graphicx}
+\usepackage{wasysym}
+\usepackage{url}        % for displaying URLs correctly
+\usepackage{soul}       % for \caps
+% \usepackage{ulem}       % for \sout
+\usepackage{hyperref}
+\usepackage[ngerman]{babel}
+
+\date{Booster Conference, Bergen/NO, 2013-03-14}
+\author{FND \& wvk, innoQ Deutschland GmbH}
+\title{ROCA}
+\subtitle{Embrace the web}
+
+
+% fonts
+\RequirePackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\setmainfont[BoldFont={MetaOT-Medi}, BoldItalicFont={MetaOT-MediIta}, ItalicFont={MetaOT-NormIta}, SlantedFont={MetaOT-NormIta}, BoldSlantedFont={MetaOT-MediIta}, Ligatures=TeX]{MetaOT-Norm}
+\setsansfont[BoldFont={MetaOT-Medi}, BoldItalicFont={MetaOT-MediIta}, ItalicFont={MetaOT-NormIta}, SlantedFont={MetaOT-NormIta}, BoldSlantedFont={MetaOT-MediIta}, Ligatures=TeX]{MetaOT-Norm}
+
+\newfontfamily\metamedifamily[SlantedFont={MetaOT-MediIta}]{MetaOT-Medi}
+
+\begin{document}
+  {\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/innoqbg.png}}
+
+  \begin{frame}[plain]
+    \titlepage
+  \end{frame}
+}
+
+\setcounter{tocdepth}{1}
+
+\begin{frame}
+  \begin{columns}
+    \begin{column}{4.4cm}
+      \includegraphics[width=4cm]{images/banana.jpg}
+    \end{column}
+    \begin{column}{6.6cm}
+      \tableofcontents
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\section{Title 1}
+\begin{frame}{\insertsectionhead}
+\end{frame}
+
+\begin{frame}{Kontakt}
+  \begin{columns}
+    \column{5cm}
+    \includegraphics[width=4cm]{images/innoQ-Logo-RGB-72dpi.png}
+    \vspace{4mm}
+    \column{4.5cm}
+    \textbf{http://www.innoq.com \\info@innoq.com}
+  \end{columns}
+
+  \begin{columns}
+    \column{5cm}
+      innoQ Deutschland GmbH\\
+      Krischerstraße 100\\
+      D- Monheim\\
+      Tel     +49 \\
+      Fax     +49
+
+    \column{5cm}
+      innoQ Schweiz GmbH \\
+      Gewerbestrasse 11 \\
+      CH-6330 Cham \\
+      Tel     +41 41 743 01 11
+    \end{columns}
+  \vspace{10mm}
+
+  \textbf{
+    Frederik Dohr      <fnd@innoq.com> \\
+    Willem van Kerkhof <wvk@innoq.com>
+  }
+\end{frame}
+
+\end{document}

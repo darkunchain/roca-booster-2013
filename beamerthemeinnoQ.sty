@@ -1,0 +1,135 @@
+% Copyright 2011 innoQ Deutschland GmbH
+% Written by Willem van Kerkhof
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackageRCS $Header: /home/wvk/innoQ/events/2012-foobar/webdav/beamerthemeinnoQ.sty,v d02a7cf4d8ae 2012/06/15 09:11:41 wvk $
+
+\DeclareOptionBeamer{height}{\PassOptionsToPackage{height=#1}{beamerouterthemesidebar}}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+\useoutertheme[width=0pt]{sidebar}
+\useinnertheme[shadow]{rounded}
+\useinnertheme{rectangles}
+\usecolortheme{innoQ}
+% \usefonttheme{professionalfonts}
+\setbeamertemplate{itemize item}{\small{$\blacktriangleright$}}
+\setbeamertemplate{frametitle}[default][center]
+\setbeamerfont{frametitle}{size=\huge,family=\bfseries}
+
+\pgfdeclareimage[width=\paperwidth]{Page-Footer}{images/innoqbgbottom.png}
+
+\RequirePackage{tikz} % zum zeichnen
+\newsavebox{\iqlogo}
+\savebox{\iqlogo}{
+  \begin{tikzpicture}[y=0.80pt, x=0.80pt, xscale=0.6, yscale=-0.6, inner sep=0pt, outer sep=0pt]
+    \begin{scope}% innoq Logo
+    % grüner kasten
+    \path[fill=iqlogogreen,nonzero rule] (181.8556,123.4561) -- (220.8331,123.4561) --
+        (220.8331,84.4799) -- (181.8556,84.4799) -- (181.8556,123.4561) -- cycle;
+
+    % gelber kasten
+    \path[fill=iqlogoyellow,nonzero rule] (175.8181,117.3874) -- (214.7943,117.3874) --
+        (214.7943,78.4111) -- (175.8181,78.4111) -- (175.8181,117.3874) -- cycle;
+
+    % inno path
+    \path[fill=iqlogoblue,nonzero rule] (168.0832,106.0481) .. controls
+        (168.0832,111.5106) and (166.5344,113.7894) .. (163.7394,113.7894) .. controls
+        (160.9007,113.7894) and (159.3107,111.9406) .. (159.3107,105.6181) .. controls
+        (159.3107,100.3281) and (160.5994,98.0494) .. (163.6107,98.0494) .. controls
+        (166.3632,98.0494) and (168.0832,99.8981) ..
+        (168.0832,106.0481)(173.2869,105.9619) .. controls (173.2869,99.0819) and
+        (169.7607,94.4794) .. (163.5669,94.4794) .. controls (157.8044,94.4794) and
+        (154.0632,98.9519) .. (154.0632,105.9194) .. controls (154.0632,112.8869) and
+        (157.7619,117.3157) .. (163.6532,117.3157) .. controls (169.5457,117.3157) and
+        (173.2869,112.9732) .. (173.2869,105.9619)(149.5269,116.7569) --
+        (149.5269,100.5007) .. controls (149.5269,96.5007) and (147.2032,94.4794) ..
+        (143.8494,94.4794) .. controls (141.5269,94.4794) and (139.5057,95.5119) ..
+        (137.1832,97.4907) .. controls (137.1832,96.3294) and (136.9257,95.3832) ..
+        (136.4094,94.3944) -- (132.1094,95.5982) .. controls (132.7107,97.1469) and
+        (132.9257,98.4794) .. (132.9257,100.7582) -- (132.9257,116.7569) --
+        (137.5707,116.7569) -- (137.5707,100.9732) .. controls (138.9894,99.5544) and
+        (140.9682,98.5219) .. (142.3444,98.5219) .. controls (144.1507,98.5219) and
+        (144.8382,99.3394) .. (144.8382,102.3069) -- (144.8382,116.7569) --
+        (149.5269,116.7569) -- cycle(127.1169,116.7569) -- (127.1169,100.5007) ..
+        controls (127.1169,96.5007) and (124.7944,94.4794) .. (121.4394,94.4794) ..
+        controls (119.1169,94.4794) and (117.0957,95.5119) .. (114.7732,97.4907) ..
+        controls (114.7732,96.3294) and (114.5157,95.3832) .. (113.9994,94.3944) --
+        (109.6994,95.5982) .. controls (110.3007,97.1469) and (110.5157,98.4794) ..
+        (110.5157,100.7582) -- (110.5157,116.7569) -- (115.1607,116.7569) --
+        (115.1607,100.9732) .. controls (116.5794,99.5544) and (118.5582,98.5219) ..
+        (119.9344,98.5219) .. controls (121.7407,98.5219) and (122.4282,99.3394) ..
+        (122.4282,102.3069) -- (122.4282,116.7569) -- (127.1169,116.7569) --
+        cycle(105.4032,88.6306) .. controls (105.4032,86.8244) and (103.9832,85.4481)
+        .. (102.3057,85.4481) .. controls (100.5432,85.4481) and (99.1669,86.8681) ..
+        (99.1669,88.6306) .. controls (99.1669,90.3506) and (100.5007,91.7706) ..
+        (102.2194,91.7706) .. controls (103.9832,91.7706) and (105.4032,90.3506) ..
+        (105.4032,88.6306)(104.6282,116.7569) -- (104.6282,94.4794) --
+        (99.8544,95.3394) -- (99.8544,116.7569) -- (104.6282,116.7569) -- cycle;
+
+    % Q path
+    \path[fill=iqlogoblue,nonzero rule] (202.9684,99.6947) .. controls
+        (202.9684,109.0997) and (200.2884,112.9435) .. (195.0809,112.9435) .. controls
+        (189.1134,112.9435) and (186.8384,107.9372) .. (186.8384,98.9360) .. controls
+        (186.8384,90.5422) and (189.0634,85.7885) .. (194.9284,85.7885) .. controls
+        (201.1984,85.7885) and (202.9684,91.1485) ..
+        (202.9684,99.6947)(209.5922,99.3410) .. controls (209.5922,89.1260) and
+        (204.8397,81.2885) .. (194.9797,81.2885) .. controls (186.2309,81.2885) and
+        (180.3659,87.7610) .. (180.3659,99.2897) .. controls (180.3659,109.6560) and
+        (185.2709,117.3422) .. (195.2322,117.3422) .. controls (195.7909,117.3422) and
+        (196.3334,117.3147) .. (196.8622,117.2622) .. controls (197.9922,117.8360) and
+        (199.0047,118.4635) .. (199.9659,119.1035) .. controls (202.5322,120.7797) and
+        (206.0409,122.7172) .. (209.8134,121.1460) -- (211.4372,117.1135) .. controls
+        (207.9797,117.7422) and (206.0409,117.0085) .. (204.1034,115.8035) .. controls
+        (203.7722,115.6047) and (203.3797,115.3685) .. (202.9609,115.1222) .. controls
+        (207.2397,112.2235) and (209.5922,106.6435) .. (209.5922,99.3410);
+
+    \end{scope}
+  \end{tikzpicture}
+}
+\newsavebox{\iqfooter}
+\savebox{\iqfooter}{
+  \begin{tikzpicture}[y=1pt, x=1pt, xscale=3.35, yscale=3.35]
+    \begin{scope}
+    \path[fill=iqlightgreen,nonzero rule] (0,2) -- (0,3) -- (28,3) -- (28,2) -- (0,2) -- cycle;
+    \path[fill=iqlightyellow,nonzero rule] (28,2) -- (28,3) -- (88,3) -- (88,2) -- (28,2) -- cycle;
+
+    \path[fill=iqgreen,nonzero rule] (0,1) -- (0,2) -- (28,2) -- (28,1) -- (0,1) -- cycle;
+    \path[fill=iqyellow,nonzero rule] (28,1) -- (28,2) -- (88,2) -- (88,1) -- (28,1) -- cycle;
+
+    \path[fill=iqlightblue,nonzero rule] (0,0) -- (0,1) -- (88,1) -- (88,0) -- (0,0) -- cycle;
+
+    \path[fill=iqlogoblue,nonzero rule] (88,0) -- (88,2) -- (110,2) -- (110,0) -- (88,0) -- cycle;
+    \end{scope}
+  \end{tikzpicture}
+}
+
+\defbeamertemplate*{footline}{Image theme}{
+  \begin{picture}(115,10)(5,0)
+    \put(0,0){\usebox{\iqfooter}}
+    \put(302,11){\usebox{\iqlogo}}
+  \end{picture}
+}
+
+\setbeamertemplate{title page}{
+  \vspace{4.5cm}
+  \begin{centering}
+    \metamedifamily\color{iqdarkblue}\fontsize{28pt}{32pt}\selectfont\inserttitle\\
+    \metamedifamily\color{iqtextgrey}\fontsize{14pt}{20pt}\selectfont\insertsubtitle\\
+    \vspace{0.5cm}
+  \end{centering}
+
+  \small{\insertauthor}\\
+  \small{\insertdate} \\
+  \vspace{0.5cm}
+  \color{iqdarkblue}\fontsize{18pt}{22pt}Wir lösen das -- persönlich!\hspace{4.3cm}\usebox{\iqlogo}
+}
+
+\mode<all>
