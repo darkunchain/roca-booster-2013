@@ -73,9 +73,13 @@
 
 \section{What's ROCA?}
 
-\begin{frame}
-  \includegraphics[width=\textwidth]{images/roca-website-screenshot.png}
-\end{frame}
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/roca-website.png}}
+  \begin{frame}
+    \vspace*{-2.5in}
+    \href{http://roca-style.org}{roca-style.org}
+  \end{frame}
+}
 
 \begin{frame}
   \Huge Yet another Manifesto?
@@ -161,12 +165,16 @@
 %   FND
 \begin{frame}{POSH}
 
-  The server returns structured semantic HTML markup.
+  The server returns structured semantic HTML markup, independent of layout information or client behavior.
+  \\
 
-  \begin{itemize}
-    \item independent of layout information
-    \item independent of client behavior
-  \end{itemize}
+  HTML offers 
+
+  \ensuremath{\rightarrow}
+  \href{http://codeartisan.blogspot.de/2012/07/using-html-as-media-type-for-your-api.html}{Using HTML as the Media Type for your API}
+  \\
+
+  (alternative serializations are encouraged)
 
 \end{frame}
 
