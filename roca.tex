@@ -36,6 +36,9 @@
 \newfontfamily\metamedifamily[SlantedFont={MetaOT-MediIta}]{MetaOT-Medi}
 
 
+\newcommand{\rocaok}{\ding{51}}
+\newcommand{\rocafail}{\ding{55}}
+
 \begin{document}
   {\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/innoqbg.png}}
 
@@ -46,9 +49,7 @@
 
 \setcounter{tocdepth}{1}
 
-\section{Embrace the Web}
-
-\begin{frame}{\insertsectionhead}
+\begin{frame}{Embrace the Web}
   \begin{columns}
     \begin{column}{4.4cm}
       \includegraphics[width=4cm]{images/embrace.jpg}
@@ -70,15 +71,15 @@
         recovering SPA enthusiast (\ensuremath{\rightarrow} TiddlyWiki)
     \item[]
     \item[wvk] \href{mailto:wvk@innoq.com}{Willem van Kerkhof} \\
-        TODO
+        practitioner of other's preaches.
   \end{itemize}
 
-%NOTE general introduction: participants' prior experience & expectations
-%NOTE * technologies (languages & frameworks)
-%NOTE * patterns
-%NOTE * common issues
-%NOTE
-%NOTE /!\ interactivity desired
+  %NOTE general introduction: participants' prior experience & expectations
+  %NOTE * technologies (languages & frameworks)
+  %NOTE * patterns
+  %NOTE * common issues
+  %NOTE
+  %NOTE /!\ interactivity desired
 
 \end{frame}
 
@@ -87,7 +88,7 @@
 {
   \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/roca-website.png}}
   \begin{frame}
-    \vspace*{-2.5in}
+    \vspace*{-6.4cm}
     \href{http://roca-style.org}{roca-style.org}
 
   %NOTE proposition for modern, maintainable web apps & the role of the
@@ -96,24 +97,25 @@
 }
 
 \begin{frame}
+  \vspace*{-1cm}
   \textcolor{gray}{
     \begin{center}
       \textbf{
-        \fontsize{60}{70}\selectfont Yet another Manifesto?
+        \fontsize{60}{50}\selectfont Yet another Manifesto?
       }
     \end{center}
   }
 
-%NOTE * innoQ: consultants - the good kind?
-%NOTE * plethora of possible approaches
-%NOTE * implicit assumptions (often due to frameworks)
-%NOTE * demand for guidance/expertise
+  %NOTE * innoQ: consultants - the good kind?
+  %NOTE * plethora of possible approaches
+  %NOTE * implicit assumptions (often due to frameworks)
+  %NOTE * demand for guidance/expertise
 \end{frame}
 
 {
   \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/buzzer.jpg}}
   \begin{frame}
-    \vspace*{2.65in}
+    \vspace*{6.7cm}
     \tiny source: \href{http://www.flickr.com/photos/sensorsicht/5338348801/}{Hannes Fritz}
 
   %NOTE "label it!"
@@ -127,6 +129,17 @@
 }
 
 \subsection{MUST criteria}
+
+\begin{frame}
+  \vspace*{-1cm}
+  \textcolor{gray}{
+    \begin{center}
+      \textbf{
+        \fontsize{60}{50}\selectfont So tell us about it!
+      }
+    \end{center}
+  }
+\end{frame}
 
 \begin{frame}{REST}
   The server application adheres to REST principles
@@ -208,52 +221,111 @@
 
 \subsection{SHOULD criteria}
 
-\begin{frame}{}
-  % Resources have additional representations in other formats, e.g. JSON and/or XML. [should-formats]
+\begin{frame}
+  \vspace*{-1cm}
+  \textcolor{gray}{
+    \begin{center}
+      \textbf{
+        \fontsize{60}{50}\selectfont Some more details, please?
+      }
+    \end{center}
+  }
+\end{frame}
+
+\begin{frame}{Formats}
+  Resources have additional representations in other formats.
 
   \begin{itemize}
-    \item
+    \item e.g. JSON and/or XML
+    \item \dots or PDF- or XLSX reports (readonly)
   \end{itemize}
 \end{frame}
 
-\begin{frame}{}
+\begin{frame}{Cookies}
+
+  Cookies may not be used for purposes other than authentication or user tracking.
+
   \begin{itemize}
-    \item
+    \item no ``redirect back'' information
+    \item no ``flash messages''
+    \item If it's worth persisting, give it a proper server side resource!
   \end{itemize}
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}{Browser Controls}
 
-% All authenticated communication relies on HTTP Basic Authentication over SSL (or Client Certificates). Alternatively, because of browser limits in handling basic auth (e.g. no logout, no styling), form-based authentication in conjunction with cookies can be used. If cookies are used, they should include all of the state needed for the server to process them, and another authentication mechanism should be supported for non-browser access. [auth]
-% Cookies may not be used for purposes other than authentication or user tracking. [cookies]
-% There may not be any session state beyond what’s needed for simple algorithmic validation of authentication information. [session]
-% The browser controls like the back, forward and refresh buttons must work as expected. I.e. the back button should take the users where they expect to be taken to (the last meaningful resource they worked with). A browser refresh should not cause a re-rendering of the login or home page instead of the page the user was looking at, or a (to the user) unexpected question about wanting to submit the same data again (when the user doesn't recall submitting any data, indicating a mis-use of the POST verb). [browser-controls]
+  The browser controls like the back, forward and refresh buttons must work as expected.
 
-% It must be possible to access each page's information and functionality by using accessibility tools like screen readers. [accessibility]
-% CSS is used for formatting and layouting. This is done following the principles of progressive enhancement, e.g. to allow a browser not capable of CSS3 features still to use a CSS3-based site.
-% The same functionality must not be implemented redundantly on both the client (JavaScript) and the server. Thus, due to the application logic requirement, application logic must not reside on the client-side. [no-duplication]
-% The server code may not "know" the HTML structures the client code generates (beyond CSS) or vice versa. Exceptions are some well defined HTML structures the server generates to initialize the client functionality above. [know-structure]
-% All JavaScript code and CSS code must be static, and must not be dynamically generated by the server in a form specific to the resource requested. (Note that this does not prohibit the use of preprocessors like CoffeeScript or LESS, as the respective code is usually pre-compiled as part of the release process.) [static-assets]
-%
-% Any dynamic routing or URI state modification triggered by JavaScript on the client side should use the HTML5 History API. [historyapi]
-%
-
+  \begin{itemize}
+    \item[back] \ensuremath{\rightarrow} user's last meaningful resource
+    \item[refresh] \ensuremath{\rightarrow} no re-rendering of the login or home page
+    \item mind the the POST verb!
+  \end{itemize}
 \end{frame}
 
-\begin{frame}
-% Cookies may not be used for purposes other than authentication or user tracking. [cookies]
+\begin{frame}{Accessability}
+
+  Each page's information and functionality must be accessible by tools like screen readers.
+
+  \begin{description}
+    \item[keyboard shortcuts:] fine, but not everyone uses a keyboard
+    \item[pointing devices:] likewise
+  \end{description}
+
+  \ensuremath{\rightarrow} be nice to blind or otherwise handicapped people!
+\end{frame}
 
 
-% All authenticated communication relies on HTTP Basic Authentication over SSL (or Client Certificates). Alternatively, because of browser limits in handling basic auth (e.g. no logout, no styling), form-based authentication in conjunction with cookies can be used. If cookies are used, they should include all of the state needed for the server to process them, and another authentication mechanism should be supported for non-browser access. [auth]
+\begin{frame}{No Duplication}
 
-% There may not be any session state beyond what’s needed for simple algorithmic validation of authentication information. [session]
+  The same functionality must not be implemented redundantly on both, client and server.
 
-% The browser controls like the back, forward and refresh buttons must work as expected. I.e. the back button should take the users where they expect to be taken to (the last meaningful resource they worked with). A browser refresh should not cause a re-rendering of the login or home page instead of the page the user was looking at, or a (to the user) unexpected question about wanting to submit the same data again (when the user doesn't recall submitting any data, indicating a mis-use of the POST verb). [browser-controls]
+  \begin{itemize}
+    \item[\ensuremath{\rightarrow}] no application logic on the client (JavaScript)
+  \end{itemize}
+\end{frame}
 
+\begin{frame}{Structure Knowlegde}
+
+  The server code may not ``know'' the HTML structures generated by client code or vice versa.
+
+  \begin{description}
+    \item[Exception:] well defined, server generated HTML to initialize client functionality
+  \end{description}
+\end{frame}
+
+\begin{frame}{CSS}
+
+  CSS is used for formatting and layouting
+
+  \begin{itemize}
+    \item following the principles of progressive enhancement
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Static assets}
+
+  All JavaScript- and CSS code must be static.
+
+  \begin{itemize}
+    \item it must not be dynamically generated for the requested resource
+    \item this does not prohibit the use of preprocessors like CoffeeScript or LESS
+  \end{itemize}
 \end{frame}
 
 \section{Quiz Time!}
+
+\begin{frame}
+  \vspace*{-1cm}
+  \textcolor{gray}{
+    \begin{center}
+      \textbf{
+        \fontsize{50}{50}\selectfont It's your turn.
+      }
+    \end{center}
+  }
+\end{frame}
 
 \begin{frame}{\insertsectionhead}
   \vspace*{0.5in}
@@ -270,8 +342,8 @@
       ROCA or not
       \vspace{0.3cm}
       \begin{itemize}
-        \item[$\square$] \ding{51}
-        \item[$\square$] \ding{55}
+        \item[$\square$] \rocaok
+        \item[$\square$] \rocafail
       \end{itemize}
     \end{column}
   \end{columns}
@@ -285,8 +357,11 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> session state?
+    \item<2> JavaScript problem?
+    \item<2> hashbang URIs?
   \end{itemize}
 
   %NOTE e.g. due to JavaScript errors (cf. Gawker hashbang URIs)
@@ -294,13 +369,15 @@
 \end{frame}
 
 \begin{frame}
-  When refreshing the page, the user is taken to the respective site's front
-  page.
+  When refreshing the page, the user is taken to the respective site's front page.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> client side logic?
+    \item<2> HTML 5 history API?
+    \item<2> where's the REST?
   \end{itemize}
 
   %NOTE URI/resource violation (e.g. bookmarks, sharing)
@@ -312,8 +389,9 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> where's the REST?
   \end{itemize}
 
   %NOTE URI/resource violation
@@ -326,11 +404,41 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> Authentication \#fail?
+    \item<2> Session state on server?
   \end{itemize}
 
   %NOTE REST stateless violation
+\end{frame}
+
+\begin{frame}
+  On a slow connection, ads, navigation elements, footers and other secondary
+  information are slowly displayed first. Eventually, the main content is displayed.
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large ?] \Large ROCA?
+    \item<2> technically OK, but annoying.
+    \item<2> opinions?
+  \end{itemize}
+
+  %NOTE POSH violation? not strictly
+\end{frame}
+
+\begin{frame}
+  Dashboard contents are loaded asynchronously via AJAX.
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocaok] \Large ROCA?
+    \item<2> progressive enhancement from simple Links
+  \end{itemize}
+
+  %NOTE fine - as long as it's POSH-based
 \end{frame}
 
 \begin{frame}
@@ -339,36 +447,12 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> progressive enhancement from simple Links
   \end{itemize}
 
   %NOTE REST verb violation
-\end{frame}
-
-\begin{frame}
-  On a slow connection, ads, navigation elements, footers and other secondary
-  information are slowly displayed first. Eventually, the content is displayed.
-
-  \vspace{0.3cm}
-  \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
-  \end{itemize}
-
-  %NOTE POSH violation? not strictly
-\end{frame}
-
-\begin{frame}
-  Dashboards contents are loaded asynchronously via AJAX.
-
-  \vspace{0.3cm}
-  \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
-  \end{itemize}
-
-  %NOTE fine - as long as it's POSH-based
 \end{frame}
 
 \begin{frame}
@@ -376,8 +460,10 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocaok] \Large ROCA?
+    \item<2> depends on implementation
+    \item<2> link to comments?
   \end{itemize}
 
   %NOTE depends on the implementation: Disqus bad, link good
@@ -389,33 +475,73 @@
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocaok] \Large ROCA?
+    \item<2> technically.
   \end{itemize}
 
   %NOTE fine (sadly)
 \end{frame}
 
+
 \begin{frame}
-  Inpecting the current page's source code reveals a minimal HTML frame with
-  JSON data embedded in a `SCRIPT` tag.
+  After clicking the ``proceeed with secure payment'' link, a browser popup window
+  warns about an untrusted SSL certificate. After confirming its trust, a second
+  popup asks for the user's login credentials.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocaok] \Large ROCA?
+    \item<2> HTTP basic auth over SSL, perfect.
+    \item<2> wanna talk about trusted CAs?
+  \end{itemize}
+
+  %NOTE perfect, especially for intranet stuff. for public sites, see next slide.
+\end{frame}
+
+\begin{frame}
+  Because of browser limitations in handling basic auth (e.g. no logout, no styling),
+  form-based authentication in conjunction with cookies is being used.
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocaok] \Large ROCA?
+    \item<2> OK, if all necessary state information is stored in the cookie.
+    \item<2> Basic auth for non-browser clients
+  \end{itemize}
+
+  %NOTE fine, but if cookies are used, they should include all of the state needed for
+  %NOTE the server to process them, and another authentication mechanism should be
+  %NOTE supported for non-browser access
+\end{frame}
+
+
+\begin{frame}
+  Inpecting the current page's source code reveals a minimal HTML frame with
+  JSON data embedded in a \texttt{<SCRIPT>} tag.
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> think POSH!
+    \item<2> think PE!
   \end{itemize}
 
   %NOTE JavaScript dependency violation (cf. Google Plus)
 \end{frame}
 
-\begin{frame}
-  Selecting "open link in new tab" results in a blank page.
+\begin{frame}[fragile]
+  Selecting ``open link in new tab'' results in a blank page.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> bad: \mint{html}|<a href="javascript:">|
+    \item<2> different, yet still bad: \mint{html}|<a href="#">|
   \end{itemize}
 
   %NOTE e.g. due to <a href="javascript:;">
@@ -423,15 +549,19 @@
 \end{frame}
 
 \begin{frame}
-  Cookies are being used to store form inputs from a previous step.
+  Form inputs from a previous step are stored in Cookies to be retrieved by
+  JavaScript for validations in the next step.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2->[\Large \rocafail] \Large ROCA?
+    \item<2-> Session state?
+    \item<2-> Application logic on Client?
+    \item<3> think of a better solution?
   \end{itemize}
 
-  %NOTE TODO: ??
+  %NOTE e.g. a multi-step wizard.
 \end{frame}
 
 \begin{frame}
