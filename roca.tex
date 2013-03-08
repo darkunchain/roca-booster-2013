@@ -175,7 +175,7 @@
   Client-Server interaction through RESTful HTTP requests.
 
   \begin{itemize}
-    \item well, just like that - period
+    \item well, just like that - period.
   \end{itemize}
 \end{frame}
 
@@ -233,7 +233,7 @@
 
   \begin{itemize}
     \item e.g. JSON and/or XML
-    \item \dots or PDF- or XLSX reports (readonly)
+    \item \dots or PDF or XLSX reports (read-only)
   \end{itemize}
 \end{frame}
 
@@ -244,7 +244,7 @@
   \begin{itemize}
     \item no ``redirect back'' information
     \item no ``flash messages''
-    \item If it's worth persisting, give it a proper server side resource!
+    \item If it's worth persisting, give it a proper server-side resource!
   \end{itemize}
 \end{frame}
 
@@ -269,7 +269,7 @@
     \item[pointing devices:] likewise
   \end{description}
 
-  \ensuremath{\rightarrow} be nice to blind or otherwise handicapped people!
+  \ensuremath{\rightarrow} Be nice to blind or otherwise handicapped people!
 \end{frame}
 
 
@@ -371,8 +371,8 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocafail] \Large ROCA?
-    \item<2> client side logic?
-    \item<2> HTML 5 history API?
+    \item<2> client-side logic?
+    \item<2> HTML5 history API?
     \item<2> where's the REST?
   \end{itemize}
 
@@ -388,6 +388,7 @@
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocafail] \Large ROCA?
     \item<2> where's the REST?
+    \item<2> there should be no difference between linking, sharing and history navigation
   \end{itemize}
 
   %NOTE URI/resource violation
@@ -402,7 +403,6 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocafail] \Large ROCA?
-    \item<2> Authentication \#fail?
     \item<2> Session state on server?
   \end{itemize}
 
@@ -417,8 +417,8 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large ?] \Large ROCA?
-    \item<2> technically OK, but annoying.
-    \item<2> opinions?
+    \item<2> not a ROCA validation (but still annoying)
+    \item<2> "content first"
   \end{itemize}
 
   %NOTE POSH violation? not strictly
@@ -431,7 +431,7 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocaok] \Large ROCA?
-    \item<2> progressive enhancement from simple Links
+    \item<2> progressive enhancement from simple links (\rightarrow hypermedia)
   \end{itemize}
 
   %NOTE fine - as long as it's POSH-based
@@ -473,7 +473,6 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocaok] \Large ROCA?
-    \item<2> technically.
   \end{itemize}
 
   %NOTE fine (sadly)
@@ -522,7 +521,7 @@
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocafail] \Large ROCA?
     \item<2> think POSH!
-    \item<2> think PE!
+    \item<2> think Progressive Enhancement!
   \end{itemize}
 
   %NOTE JavaScript dependency violation (cf. Google Plus)
@@ -535,16 +534,13 @@
   \begin{itemize}
     \item<1|only@1>[\Large $\square$] \Large ROCA?
     \item<2|only@2>[\Large \rocafail] \Large ROCA?
-    \item<2> bad: \mint{html}|<a href="javascript:">|
+    \item<2> bad: \mint{html}|<a href="javascript:...;">|
     \item<2> different, yet still bad: \mint{html}|<a href="#">|
   \end{itemize}
-
-  %NOTE e.g. due to <a href="javascript:;">
-  %NOTE different, but still invalid: <a href="#">
 \end{frame}
 
 \begin{frame}
-  Form inputs from a previous step are stored in Cookies to be retrieved by
+  Form inputs from a previous step are stored in cookies to be retrieved by
   JavaScript for validations in the next step.
 
   \vspace{0.3cm}
