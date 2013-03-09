@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
 
 xelatex -shell-escape roca
+notify-send LaTex "build complete"
