@@ -216,16 +216,44 @@
   The server returns structured semantic HTML markup, independent of layout information or client behavior.
 
   \vspace*{0.25cm}
-  HTML
+  NB: alternative serializations are encouraged
+\end{frame}
+
+% FND
+\begin{frame}{HTML}
   \begin{itemize}
     \item constitutes the foundation of the contract between \\ server and client
-    \item provides essential data structures with rich, standardized semantics as well as hypermedia support \\
+    \item provides essential data structures with rich, standardized semantics as well as hypermedia support
+      \\
+      \vspace*{0.25cm}
       \ensuremath{\rightarrow}
       \href{http://codeartisan.blogspot.de/2012/07/using-html-as-media-type-for-your-api.html}{Using HTML as the Media Type for your API}
+      \\
+      \vspace*{0.25cm}
+      \ensuremath{\rightarrow}
+      "lower-case semantic web"
+  \end{itemize}
+\end{frame}
+
+% FND
+\begin{frame}[fragile]
+  \frametitle{HTML}
+
+  \begin{itemize}
+    \item \href{http://microformats.org}{Microformats}
+    \item \href{http://www.w3.org/TR/microdata/}{microdata}
+    \item \href{http://rdfa.info}{RDFa}
   \end{itemize}
 
-  \vspace*{0.25cm}
-  NB: alternative serializations are encouraged
+  \begin{minted}{html}
+<div class="vcard">
+  <span class="fn">Willem van Kerkhof</span>
+  <a class="email" href="mailto:wvk@innoq.com">wvk</a>
+  <a class="url fn org" href="http://innoq.com">innoQ</a>
+</div>
+  \end{minted}
+  -- \href{http://microformats.org/wiki/hcard}{hCard}
+
 \end{frame}
 
 % FND
