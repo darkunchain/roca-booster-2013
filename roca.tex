@@ -252,7 +252,7 @@
   <a class="url fn org" href="http://innoq.com">innoQ</a>
 </div>
   \end{minted}
-  -- \href{http://microformats.org/wiki/hcard}{hCard}
+  --- \href{http://microformats.org/wiki/hcard}{hCard}
 
 \end{frame}
 
@@ -263,6 +263,72 @@
   \begin{itemize}
     \item the application remains usable without JavaScript
     \item usability enhancements and convenience features are added progressively
+  \end{itemize}
+\end{frame}
+
+% FND
+\begin{frame}{Progressive Enhancement}
+  \vspace*{1cm}
+  \center \includegraphics[width=8cm]{images/peanut.jpg}
+
+  \vspace*{1cm}
+  \tiny source: \href{http://www.alistapart.com/articles/understandingprogressiveenhancement/}{Understanding Progressive Enhancement}
+\end{frame}
+
+\begin{frame}{Progressive Enhancement}
+
+  \begin{exampleblock}{}
+    {\large ``A webpage doesn't have to look the same in every browser. In fact, a webpage shouldn't look the same in every browser''}
+    \vskip5mm
+    \hspace*\fill{\small--- \href{http://www.webmonkey.com/2012/03/video-progressive-enhancement-2-0/}{Nicolas Zakas}}
+  \end{exampleblock}
+
+  \vspace*{0.5cm}
+  offering users the best possible experience \\
+  given the capabilities of their device
+\end{frame}
+
+% FND
+{
+  \usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/escalator.jpg}}
+  \begin{frame}
+    \vspace*{6.7cm}
+    \textcolor{gray}{\tiny
+        sources:
+        \href{http://www.flickr.com/photos/midiman/336647596}{midiman},
+        \href{http://www.slideshare.net/nzakas/progressive-enhancement-20-conference-agnostic}{Nicolas Zakas}
+    }
+  \end{frame}
+}
+
+
+% FND
+\begin{frame}[fragile]
+  \frametitle{Progressive Enhancement}
+
+  \begin{minted}{html}
+    <input type="date">
+  \end{minted}
+  \begin{minted}{javascript}
+    jQuery("input[type=date]").datepicker();
+  \end{minted}
+
+  \vspace*{0.5cm}
+  \begin{minted}{html}
+    <table class="sortable">
+        ...
+    </table>
+  \end{minted}
+  \begin{minted}{javascript}
+    jQuery("table.sortable").dataTable();
+  \end{minted}
+\end{frame}
+
+% FND
+\begin{frame}{Progressive Enhancement}
+  \begin{itemize}
+    \item separation of concerns \\ encapsulation, loose coupling
+    \item maintainability \& reusability
   \end{itemize}
 \end{frame}
 
@@ -344,7 +410,7 @@
 
 \begin{frame}{Static assets}
 
-  All JavaScript- and CSS code must be static.
+  All JavaScript and CSS code must be static.
 
   \begin{itemize}
     \item it must not be dynamically generated for the requested resource
