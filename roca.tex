@@ -193,10 +193,17 @@
 
 \begin{frame}{No Duplication}
 
-  The same functionality must not be implemented redundantly on both, client and server.
+  The same functionality must not be implemented redundantly on both client and server.
 
+  \vspace*{0.25cm}
+  \ensuremath{\rightarrow} no application logic on the client (JavaScript)
+
+  \vspace*{0.5cm}
+  risks:
   \begin{itemize}
-    \item[\ensuremath{\rightarrow}] no application logic on the client (JavaScript)
+    \item increased maintenance
+    \item keeping implementations in sync
+    \item subtle differences in interpretation
   \end{itemize}
 \end{frame}
 
