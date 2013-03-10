@@ -349,6 +349,29 @@ elements.onclick = function() {
 }
 
 % FND
+\begin{frame}[fragile]{Progressive Enhancement}
+
+  \begin{minted}[fontsize=\footnotesize]{html}
+<div class="tabs">
+    <ul>
+        <li> <a href="#about">About</a> </li>
+        <li> <a href="#toc">Table of Contents</a> </li>
+        <li> <a href="#comments">Discussion</a> </li>
+    </ul>
+
+    <p id="about">lorem ipsum dolor sit amet</p>
+    <ol id="toc"> ... </ol>
+    <div id="comments"> ... </div>
+</div>
+  \end{minted}
+  \begin{minted}[fontsize=\footnotesize]{javascript}
+jQuery(".tabs").tabs();
+  \end{minted}
+
+  \tiny \ensuremath{\rightarrow} \href{http://jqueryui.com/tabs/}{jQuery UI}
+\end{frame}
+
+% FND
 \begin{frame}[fragile]
   \frametitle{Progressive Enhancement}
 
@@ -377,9 +400,6 @@ elements.onclick = function() {
     \item maintainability \& reusability
   \end{itemize}
 \end{frame}
-
-http://www.innoq.com/blog/st/presentations/2013/2013-03-06-WebDevelopmentWrong--QCon.pdf
-slides 33-48
 
 \subsection{SHOULD criteria}
 
