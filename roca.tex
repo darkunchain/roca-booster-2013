@@ -191,8 +191,13 @@
     \item a service without business logic is a database
   \end{itemize}
 
-  %NOTE regarding trust: Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
-  %NOTE http://www.golem.de/news/elektronische-steuererklaerung-elster-fuer-linux-und-macos-x-existiert-1303-98024-2.html
+  %NOTE regarding trust:
+  %NOTE * Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
+  %NOTE   http://www.golem.de/news/elektronische-steuererklaerung-elster-fuer-linux-und-macos-x-existiert-1303-98024-2.html
+  %NOTE * limited reliability of JavaScript execution:
+  %NOTE   * JavaScript much less fault-tolerant than HTML
+  %NOTE   * transport corruption (e.g. mobile compression)
+  %NOTE   * security filters (firewall or browser plugins)
 \end{frame}
 
 \begin{frame}{No Duplication}
@@ -206,7 +211,7 @@
   risks:
   \begin{itemize}
     \item increased maintenance
-    \item keeping implementations in sync
+    \item diverging implementations
     \item subtle differences in interpretation
   \end{itemize}
 \end{frame}
@@ -267,6 +272,41 @@
 \end{frame}
 
 % FND
+\begin{frame}[fragile]
+  \frametitle{Unobtrusive JavaScript}
+
+  \begin{itemize}
+    \item[]<1|only@1> \begin{minted}{html}
+<a href="javascript:doStuff();">action</a>
+    \end{minted}
+    \item[]<2|only@2> \begin{minted}{html}
+<a href="#"
+    onclick="doStuff();">action</a>
+    \end{minted}
+    \item[]<3|only@3> \begin{minted}{html}
+<a href="/my-resource"
+    onclick="doStuff(this.href);">action</a>
+    \end{minted}
+    \item[]<4|only@4> \begin{minted}{html}
+<a href="/my-resource"
+    class="remote">action</a>
+    \end{minted}
+    \item[]<5|only@5> \begin{minted}{html}
+<a href="/my-resource"
+    class="remote">action</a>
+    \end{minted}
+    \vspace*{0.25cm}
+    \begin{minted}{javascript}
+var elements = document.
+        getElementsByClassName("remote");
+elements.onclick = function() {
+    doStuff(this.href);
+};
+    \end{minted}
+  \end{itemize}
+\end{frame}
+
+% FND
 \begin{frame}{Progressive Enhancement}
   \vspace*{1cm}
   \center \includegraphics[width=8cm]{images/peanut.jpg}
@@ -301,7 +341,6 @@
   \end{frame}
 }
 
-
 % FND
 \begin{frame}[fragile]
   \frametitle{Progressive Enhancement}
@@ -331,6 +370,9 @@
     \item maintainability \& reusability
   \end{itemize}
 \end{frame}
+
+http://www.innoq.com/blog/st/presentations/2013/2013-03-06-WebDevelopmentWrong--QCon.pdf
+slides 33-48
 
 \subsection{SHOULD criteria}
 
@@ -664,16 +706,15 @@
 \end{frame}
 
 \begin{frame}
-  TODO: redirect session data, multi-tab conflicts
-  e.g. stilkov: "Creating a second window does not create an independent view, but confuses the application's control flow concept"
+  Opening the current page in a second browser window renders the first page inoperable.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2->[\Large \rocafail] \Large ROCA?
+    \item<2-> session state
   \end{itemize}
 
-  %NOTE TODO
 \end{frame}
 
 \begin{frame}
