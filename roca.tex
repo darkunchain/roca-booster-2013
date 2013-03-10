@@ -194,10 +194,6 @@
   %NOTE regarding trust:
   %NOTE * Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
   %NOTE   http://www.golem.de/news/elektronische-steuererklaerung-elster-fuer-linux-und-macos-x-existiert-1303-98024-2.html
-  %NOTE * limited reliability of JavaScript execution:
-  %NOTE   * JavaScript much less fault-tolerant than HTML
-  %NOTE   * transport corruption (e.g. mobile compression)
-  %NOTE   * security filters (firewall or browser plugins)
 \end{frame}
 
 \begin{frame}{No Duplication}
@@ -268,6 +264,17 @@
   \begin{itemize}
     \item the application remains usable without JavaScript
     \item usability enhancements and convenience features are added progressively
+  \end{itemize}
+\end{frame}
+
+% FND
+\begin{frame}{Unobtrusive JavaScript}
+  relying on client-side JavaScript execution is risky
+
+  \begin{itemize}
+    \item fault tolerance
+    \item transport corruption (e.g. mobile compression)
+    \item security filters (e.g. firewalls or browser plugins)
   \end{itemize}
 \end{frame}
 
