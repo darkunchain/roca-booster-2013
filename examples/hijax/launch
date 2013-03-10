@@ -1,7 +1,0 @@
-#!/usr/bin/env sh
-
-kill `cat .server.pid`
-
-python -m SimpleHTTPServer &
-echo $! > .server.pid
-echo "serving at http://localhost:8000"
