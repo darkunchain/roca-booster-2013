@@ -68,7 +68,7 @@
 \begin{frame}{\insertsectionhead}
   \begin{itemize}
     \item[FND] Frederik Dohr \href{mailto:fnd@innoq.com}{<fnd@innoq.com>} \\
-        recovering SPA enthusiast (\ensuremath{\rightarrow} TiddlyWiki)
+        recovering SPA enthusiast
     \item[]
     \item[wvk] Willem van Kerkhof \href{mailto:wvk@innoq.com}{<wvk@innoq.com>} \\
         practitioner of others' preachings
@@ -195,8 +195,9 @@
     \item a service without business logic is a database
   \end{itemize}
 
-  %NOTE regarding trust: Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
-  %NOTE http://www.golem.de/news/elektronische-steuererklaerung-elster-fuer-linux-und-macos-x-existiert-1303-98024-2.html
+  %NOTE regarding trust:
+  %NOTE * Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
+  %NOTE   http://www.golem.de/news/elektronische-steuererklaerung-elster-fuer-linux-und-macos-x-existiert-1303-98024-2.html
 \end{frame}
 
 \begin{frame}{No Duplication}
@@ -212,7 +213,7 @@
   risks:
   \begin{itemize}
     \item increased maintenance
-    \item keeping implementations in sync
+    \item diverging implementations
     \item subtle differences in interpretation
   \end{itemize}
 \end{frame}
@@ -281,6 +282,52 @@
 \end{frame}
 
 % FND
+\begin{frame}{Unobtrusive JavaScript}
+  relying on client-side JavaScript execution is risky
+
+  \begin{itemize}
+    \item fault tolerance
+    \item transport corruption (e.g. mobile compression)
+    \item security filters (e.g. firewalls or browser plugins)
+  \end{itemize}
+\end{frame}
+
+% FND
+\begin{frame}[fragile]
+  \frametitle{Unobtrusive JavaScript}
+
+  \begin{itemize}
+    \item[]<1|only@1> \begin{minted}{html}
+<a href="javascript:doStuff();">action</a>
+    \end{minted}
+    \item[]<2|only@2> \begin{minted}{html}
+<a href="#"
+    onclick="doStuff();">action</a>
+    \end{minted}
+    \item[]<3|only@3> \begin{minted}{html}
+<a href="/my-resource"
+    onclick="doStuff(this.href);">action</a>
+    \end{minted}
+    \item[]<4|only@4> \begin{minted}{html}
+<a href="/my-resource"
+    class="remote">action</a>
+    \end{minted}
+    \item[]<5|only@5> \begin{minted}{html}
+<a href="/my-resource"
+    class="remote">action</a>
+    \end{minted}
+    \vspace*{0.25cm}
+    \begin{minted}{javascript}
+var elements = document.
+        getElementsByClassName("remote");
+elements.onclick = function() {
+    doStuff(this.href);
+};
+    \end{minted}
+  \end{itemize}
+\end{frame}
+
+% FND
 \begin{frame}{Progressive Enhancement}
   \vspace*{1cm}
   \center \includegraphics[width=8cm]{images/peanut.jpg}
@@ -315,6 +362,28 @@
   \end{frame}
 }
 
+% FND
+\begin{frame}[fragile]{Progressive Enhancement}
+
+  \begin{minted}[fontsize=\footnotesize]{html}
+<div class="tabs">
+    <ul>
+        <li> <a href="#about">About</a> </li>
+        <li> <a href="#toc">Table of Contents</a> </li>
+        <li> <a href="#comments">Discussion</a> </li>
+    </ul>
+
+    <p id="about">lorem ipsum dolor sit amet</p>
+    <ol id="toc"> ... </ol>
+    <div id="comments"> ... </div>
+</div>
+  \end{minted}
+  \begin{minted}[fontsize=\footnotesize]{javascript}
+jQuery(".tabs").tabs();
+  \end{minted}
+
+  \tiny \ensuremath{\rightarrow} \href{http://jqueryui.com/tabs/}{jQuery UI}
+\end{frame}
 
 % FND
 \begin{frame}[fragile]
@@ -344,6 +413,10 @@
     \item separation of concerns \\ encapsulation, loose coupling
     \item maintainability \& reusability
   \end{itemize}
+
+  \vspace*{0.5cm}
+  \ensuremath{\rightarrow}
+  \href{http://helloworld.innoq.com/workshops/javascript/part4.html\#slide-40}{component lifecycle}
 \end{frame}
 
 \subsection{SHOULD criteria}
@@ -668,16 +741,15 @@
 \end{frame}
 
 \begin{frame}
-  TODO: redirect session data, multi-tab conflicts
-  e.g. stilkov: ``Creating a second window does not create an independent view, but confuses the application's control flow concept''
+  Opening the current page in a second browser window renders the first page inoperable.
 
   \vspace{0.3cm}
   \begin{itemize}
-    \item[$\square$] \ding{51}
-    \item[$\square$] \ding{55}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2->[\Large \rocafail] \Large ROCA?
+    \item<2-> session state
   \end{itemize}
 
-  %NOTE TODO
 \end{frame}
 
 \begin{frame}
@@ -690,6 +762,14 @@
   }
 \end{frame}
 
+\begin{frame}{ROCAful Examples}
+  \begin{itemize}
+    \item \href{http://fnd.github.com/hijax-demo/}{Hijax demo}
+    \item \href{http://pjax.heroku.com}{pjax}
+    \item \href{https://github.com/rails/turbolinks}{Turbolinks}
+    \item \href{http://rocatodo.herokuapp.com}{TodoMVC (ROCA)}
+  \end{itemize}
+\end{frame}
 
 \begin{frame}{Contact}
   \begin{columns}
