@@ -3,6 +3,7 @@
 \usetheme{innoQ}
 \setbeamertemplate{navigation symbols}{}
 % \beamersetuncovermixins{\opaqueness<1>{15}}{\opaqueness<2->{10}}
+\usepackage{tikz}
 \def\pdfshellescape{1}
 \usetikzlibrary{calc}
 % \usepackage[utf8]{inputenc}
@@ -38,6 +39,10 @@
 % symbol shortcuts for ROCA quiz
 \newcommand{\rocaok}{\ding{51}}
 \newcommand{\rocafail}{\ding{55}}
+\newcommand{\rocastamp}{
+  \leavevmode
+  \put(220,60){\includegraphics[width=2.5cm]{images/roca-stamp.png}} %mit \includegraphics ersetzen
+}
 
 \begin{document}
   {\usebackgroundtemplate{\includegraphics[width=\paperwidth]{images/innoqbg.png}}
@@ -252,6 +257,7 @@ emphasis ................................ emphasis
     \item HTTP methods are used in line with their definition
     \item resource state is maintained by the server
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \begin{frame}{Cookies}
@@ -264,6 +270,7 @@ emphasis ................................ emphasis
     \item no session state
     \item If it's worth persisting, give it a proper server-side resource!
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \begin{frame}{Application Logic on Server}
@@ -273,6 +280,7 @@ emphasis ................................ emphasis
     \item authority \& trust
     \item a service without business logic is a database
   \end{itemize}
+  \rocastamp
 
   %NOTE regarding trust:
   %NOTE * Elster example ("Schnittstelle führt keine Plausibilitätsprüfung durch")
@@ -295,13 +303,16 @@ emphasis ................................ emphasis
     \item diverging implementations
     \item subtle differences in interpretation
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 % FND
 \begin{frame}{POSH}
-  The server returns structured semantic HTML markup, independent of layout information or client behavior.
-  \vspace*{0.25cm}
-  NB: alternative serializations are encouraged
+  The server returns structured semantic HTML markup, independent of layout information or client behaviour.\\
+  \begin{itemize}
+    \item[] NB: alternative serializations are encouraged
+  \end{itemize}
+  \rocastamp
 \end{frame}
 
 % FND
@@ -349,6 +360,7 @@ emphasis ................................ emphasis
     \item the application remains usable without JavaScript
     \item usability enhancements and convenience features are added progressively
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 % FND
@@ -483,8 +495,9 @@ jQuery(".tabs").tabs();
     \item separation of concerns \\ encapsulation, loose coupling
     \item maintainability \& reusability
   \end{itemize}
+  \rocastamp
 
-  \vspace*{0.5cm}
+  \vspace*{-0.5cm}
   \ensuremath{\rightarrow}
   \href{http://helloworld.innoq.com/workshops/javascript/part4.html\#slide-40}{component lifecycle}
 \end{frame}
@@ -497,6 +510,7 @@ jQuery(".tabs").tabs();
     \item it must not be dynamically generated for the requested resource
     \item this does not prohibit the use of preprocessors like CoffeeScript or LESS
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \section{UX Consequences}
@@ -521,6 +535,7 @@ jQuery(".tabs").tabs();
     \item creating a bookmark
     \item or using any of the fancier ways to share URIs
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \begin{frame}{Non-Browser Clients}
@@ -540,6 +555,7 @@ jQuery(".tabs").tabs();
     \item e.g. JSON, XML, CSV (read/write)
     \item \dots or PDF or XLSX reports (read-only)
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \begin{frame}{Browser Controls}
@@ -551,6 +567,7 @@ jQuery(".tabs").tabs();
     \item[refresh] \ensuremath{\rightarrow} no re-rendering of the login or home page
     \item mind the the POST verb!
   \end{itemize}
+  \rocastamp
 \end{frame}
 
 \begin{frame}{Accessability}
@@ -562,7 +579,7 @@ jQuery(".tabs").tabs();
     \item[pointing devices:] likewise
   \end{description}
 
-  \ensuremath{\rightarrow} Be nice to blind or otherwise handicapped people!
+  \rocastamp
 \end{frame}
 
 \section{Quiz Time!}
