@@ -409,6 +409,22 @@ elements.onclick = function() {
   \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Static Assets}
+  All JavaScript and CSS code must be static.
+
+  \begin{itemize}
+    \item no dynamic per-request code generation
+    \begin{minted}{html}
+<script>
+var message = "hello ${username}";
+var element = jQuery("item_${item.id}");
+</script>
+    \end{minted}
+  \end{itemize}
+
+  NB: This does not prohibit the use of preprocessors like LESS or CoffeeScript.
+\end{frame}
+
 % FND
 \begin{frame}{Progressive Enhancement}
   \vspace*{1cm}
@@ -502,17 +518,7 @@ jQuery(".tabs").tabs();
   \href{http://helloworld.innoq.com/workshops/javascript/part4.html\#slide-40}{component lifecycle}
 \end{frame}
 
-\begin{frame}{Static assets}
-
-  All JavaScript and CSS code must be static.
-
-  \begin{itemize}
-    \item it must not be dynamically generated for the requested resource
-    \item this does not prohibit the use of preprocessors like CoffeeScript or LESS
-  \end{itemize}
   \rocastamp
-\end{frame}
-
 \section{UX Consequences}
 
 \begin{frame}
