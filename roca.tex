@@ -710,6 +710,20 @@ jQuery(".tabs").tabs();
   %NOTE POSH violation? not strictly
 \end{frame}
 
+\begin{frame}[fragile]
+  While navigating a site, the browser's address bar displays URLs of the form
+  \mint{html}|http://example.org/#!inbox|
+  \mint{html}|http://example.org/#!compose|
+
+  \vspace{0.3cm}
+  \begin{itemize}
+    \item<1|only@1>[\Large $\square$] \Large ROCA?
+    \item<2|only@2>[\Large \rocafail] \Large ROCA?
+    \item<2> client-side routing undermines most ROCA principles
+  \end{itemize}
+
+\end{frame}
+
 \begin{frame}
   Dashboard contents are loaded asynchronously via AJAX.
 
@@ -864,10 +878,10 @@ jQuery(".tabs").tabs();
 
 \begin{frame}{Key Takeaways}
   \begin{itemize}
-    \item RESTful HTTP
-    \item server-side authority
     \item POSH
     \item unobtrusive JavaScript
+    \item RESTful HTTP
+    \item server-side authority
     \item no duplication
   \end{itemize}
 \end{frame}
