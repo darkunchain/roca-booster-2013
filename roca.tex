@@ -416,20 +416,14 @@ elements.onclick = function() {
     \item no dynamic per-request code generation
     \begin{minted}{html}
 <script>
-var message = "hello ${username}";
-var element = jQuery("item_${item.id}");
+  var message = "hello ${username}";
+  var element = jQuery("item_${item.id}");
 </script>
     \end{minted}
+    \item[NB:] This does not prohibit the use of preprocessors like LESS \\ or CoffeeScript.
   \end{itemize}
 
-  \begin{columns}
-    \begin{column}{8.0cm}
-      NB: This does not prohibit the use of preprocessors like LESS \\ or CoffeeScript.
-    \end{column}
-    \begin{column}{2.5cm}
-      \rocastamp
-    \end{column}
-  \end{columns}
+  \rocastamp
 \end{frame}
 
 % FND
