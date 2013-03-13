@@ -169,10 +169,23 @@ emphasis ................................ emphasis
   \end{columns}
 \end{frame}
 
-\begin{frame}{Meaningful Resources}
+\begin{frame}
+  \vspace*{-1cm}
+  \textcolor{gray}{
+    \begin{center}
+      \textbf{
+        %FIXME: increase line spacing!
+        \fontsize{60}{60}\selectfont Interlude: REST
+      }
+    \end{center}
+  }
+\end{frame}
+
+\begin{frame}{REST: Meaningful Resources}
   \begin{itemize}
     \item resources represent real or virtual 'things'
     \item resources can be collections
+    \item resources provide a uniform interface
   \end{itemize}
 \end{frame}
 
@@ -256,19 +269,6 @@ emphasis ................................ emphasis
     \item all necessary request handling information is contained within the request
     \item HTTP methods are used in line with their definition
     \item resource state is maintained by the server
-  \end{itemize}
-  \rocastamp
-\end{frame}
-
-\begin{frame}{Cookies}
-
-  Cookies may not be used for purposes other than authentication or user tracking.
-
-  \begin{itemize}
-    \item no ``redirect back'' information
-    \item no ``flash messages''
-    \item no session state
-    \item If it's worth persisting, give it a proper server-side resource!
   \end{itemize}
   \rocastamp
 \end{frame}
@@ -559,6 +559,18 @@ jQuery(".tabs").tabs();
     \item arbitrary unanticipated usage
   \end{itemize}
 
+  \rocastamp
+\end{frame}
+
+\begin{frame}{Cookies}
+  Cookies may not be used for purposes other than authentication or user tracking.
+
+  \begin{itemize}
+    \item no ``redirect back'' information
+    \item no ``flash messages''
+    \item no session state
+    \item If it's worth persisting, give it a proper server-side resource!
+  \end{itemize}
   \rocastamp
 \end{frame}
 
